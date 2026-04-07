@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +8,7 @@
 
 body {
   background: #f4f6fb;
+  padding-top: 80px; /* IMPORTANT: évite que le contenu soit caché */
 }
 
 /* HEADER */
@@ -14,13 +16,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 15px 20px;
   background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .logo {
   font-weight: bold;
   color: #4a00e0;
+  font-size: 16px;
 }
 
 .slogan {
@@ -36,57 +46,70 @@ body {
   border-radius: 8px;
   text-decoration: none;
   font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-/* Effet pulsation */
+/* Hover pro */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* Pulsation plus douce */
 .pulse {
-  animation: pulse 1.5s infinite;
+  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(142,45,226,0.5); }
-  70% { box-shadow: 0 0 0 12px rgba(142,45,226,0); }
+  0% { box-shadow: 0 0 0 0 rgba(142,45,226,0.4); }
+  70% { box-shadow: 0 0 0 14px rgba(142,45,226,0); }
   100% { box-shadow: 0 0 0 0 rgba(142,45,226,0); }
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 50px 20px;
+  padding: 60px 20px;
   background: linear-gradient(135deg, #4a00e0, #8e2de2);
   color: white;
 }
 
 .hero h1 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
+  font-size: 1.7rem;
+  margin-bottom: 12px;
+  line-height: 1.3;
 }
 
 .hero p {
   font-size: 0.95rem;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  opacity: 0.95;
 }
 
 .price {
   margin: 15px 0;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
+/* Badge confiance */
 .trust {
   font-size: 12px;
-  margin-top: 10px;
+  margin-top: 12px;
+  opacity: 0.9;
 }
 
 /* SECTION */
 .section {
-  padding: 40px 15px;
+  padding: 50px 15px;
 }
 
 .section h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #4a00e0;
+  font-size: 1.3rem;
 }
 
 /* GRID */
@@ -96,14 +119,16 @@ body {
   gap: 15px;
 }
 
+/* CARD */
 .card {
   background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+
   opacity: 0;
-  transform: translateY(20px);
-  transition: 0.4s;
+  transform: translateY(25px);
+  transition: all 0.4s ease;
 }
 
 .card.show {
@@ -111,6 +136,12 @@ body {
   transform: translateY(0);
 }
 
+/* Effet hover carte */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* SECTION HIGHLIGHT */
 .highlight {
   background: #eef1ff;
 }
@@ -119,21 +150,33 @@ body {
   text-align: center;
 }
 
+/* CONTACT */
+.contact {
+  text-align: center;
+  line-height: 1.8;
+}
+
 /* FOOTER */
 footer {
   background: #111;
   color: white;
   text-align: center;
   padding: 20px;
+  font-size: 13px;
 }
 
-/* RESPONSIVE */
+/* TABLET */
 @media (min-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* DESKTOP */
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
