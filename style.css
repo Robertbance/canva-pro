@@ -8,7 +8,7 @@
 
 body {
   background: #f4f6fb;
-  padding-top: 80px; /* IMPORTANT: évite que le contenu soit caché */
+  padding-top: 80px; /* évite que le header cache le contenu */
 }
 
 /* HEADER */
@@ -31,6 +31,11 @@ body {
   font-weight: bold;
   color: #4a00e0;
   font-size: 16px;
+  text-decoration: none;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 .slogan {
@@ -50,13 +55,12 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Hover pro */
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 
-/* Pulsation plus douce */
+/* PULSE CTA */
 .pulse {
   animation: pulse 2s infinite;
 }
@@ -75,6 +79,22 @@ body {
   color: white;
 }
 
+/* BANNIÈRE RESPONSIVE */
+.hero-banner {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.hero-banner img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* TEXTE HERO */
 .hero h1 {
   font-size: 1.7rem;
   margin-bottom: 12px;
@@ -86,29 +106,13 @@ body {
   margin-bottom: 12px;
   opacity: 0.95;
 }
-.hero-img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
+
 .price {
   margin: 15px 0;
   font-weight: bold;
   font-size: 1.2rem;
 }
-.logo {
-  font-weight: bold;
-  color: #4a00e0;
-  font-size: 16px;
-  text-decoration: none;
-}
 
-.logo:hover {
-  opacity: 0.8;
-}
-/* Badge confiance */
 .trust {
   font-size: 12px;
   margin-top: 12px;
@@ -151,7 +155,6 @@ body {
   transform: translateY(0);
 }
 
-/* Effet hover carte */
 .card:hover {
   transform: translateY(-5px);
 }
@@ -167,7 +170,6 @@ body {
 
 /* CONTACT */
 .contact {
-  text-align: center;
   line-height: 1.8;
 }
 
@@ -186,6 +188,10 @@ footer {
     font-size: 2.2rem;
   }
 
+  .hero-banner img {
+    max-width: 700px;
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -193,6 +199,14 @@ footer {
 
 /* DESKTOP */
 @media (min-width: 1024px) {
+  .hero {
+    padding: 80px 40px;
+  }
+
+  .hero-banner img {
+    max-width: 800px;
+  }
+
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
