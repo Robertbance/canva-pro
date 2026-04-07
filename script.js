@@ -1,12 +1,4 @@
-// 🔗 Lien de paiement (à modifier)
-const paymentLink = "https://robandigit.com/canva-pro-a-vie/checkout";
-
-// Appliquer le lien à tous les boutons
-document.querySelectorAll("a").forEach(link => {
-  link.href = paymentLink;
-});
-
-// 🎬 Animation au scroll
+// Animation au scroll (effet pro)
 const cards = document.querySelectorAll(".card");
 
 const observer = new IntersectionObserver(entries => {
@@ -17,6 +9,4 @@ const observer = new IntersectionObserver(entries => {
   });
 });
 
-cards.forEach(card => {
-  observer.observe(card);
-});
+cards.forEach(card => observer.observe(card));
