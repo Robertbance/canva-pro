@@ -86,13 +86,28 @@ body {
   margin-bottom: 12px;
   opacity: 0.95;
 }
-
+.hero-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 .price {
   margin: 15px 0;
   font-weight: bold;
   font-size: 1.2rem;
 }
+.logo {
+  font-weight: bold;
+  color: #4a00e0;
+  font-size: 16px;
+  text-decoration: none;
+}
 
+.logo:hover {
+  opacity: 0.8;
+}
 /* Badge confiance */
 .trust {
   font-size: 12px;
